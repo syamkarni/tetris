@@ -16,44 +16,46 @@
             background-color: #222;
             color: white;
         }
+        #mainContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
         #gameContainer {
             display: inline-block;
-            margin-top: 10px;
+            margin: 10px;
         }
         canvas { 
             border: 1px solid black; 
             background-color: #000;
         }
-        .controls {
-            margin-top: 10px;
-            display: flex;
-            gap: 10px;
-        }
-        #speedControl {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
+        .controls, #speedControl {
+            text-align: center;
+            margin: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Tetris Game with Parentheses Blocks</h1>
+    <h1>Tetris From Tetris</h1>
     <h2>Score: <span id="score">0</span> | High Score: <span id="highScore">0</span></h2>
     
-    <div id="gameContainer">
-        <canvas id="gameCanvas" width="300" height="600"></canvas>
-    </div>
+    <div id="mainContainer">
+        <div class="controls">
+            <button id="pauseBtn">Pause</button>
+            <button id="restartBtn">Restart</button>
+        </div>
 
-    <div class="controls">
-        <button id="pauseBtn">Pause</button>
-        <button id="restartBtn">Restart</button>
-    </div>
+        <div id="gameContainer">
+            <canvas id="gameCanvas" width="300" height="600"></canvas>
+        </div>
 
-    <div id="speedControl">
-        <label for="speedSlider">Adjust Speed:</label>
-        <input type="range" id="speedSlider" min="1" max="10" value="5">
-        <span id="speedDisplay">5</span>
+        <div id="speedControl">
+            <label for="speedSlider">Adjust Speed:</label>
+            <input type="range" id="speedSlider" min="1" max="10" value="5">
+            <span id="speedDisplay">5</span>
+        </div>
     </div>
     
     <script src="tetris.js"></script>
