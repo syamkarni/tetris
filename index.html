@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Game</title>
+    <style>
+        body { 
+            text-align: center; 
+            margin: 0; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #222;
+            color: white;
+        }
+        #gameContainer {
+            display: inline-block;
+            margin-top: 10px;
+        }
+        canvas { 
+            border: 1px solid black; 
+            background-color: #000;
+        }
+        .controls {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        #speedControl {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tetris Game with Parentheses Blocks</h1>
+    <h2>Score: <span id="score">0</span> | High Score: <span id="highScore">0</span></h2>
+    
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="300" height="600"></canvas>
+    </div>
+
+    <div class="controls">
+        <button id="pauseBtn">Pause</button>
+        <button id="restartBtn">Restart</button>
+    </div>
+
+    <div id="speedControl">
+        <label for="speedSlider">Adjust Speed:</label>
+        <input type="range" id="speedSlider" min="1" max="10" value="5">
+        <span id="speedDisplay">5</span>
+    </div>
+    
+    <script src="tetris.js"></script>
+</body>
+</html>
